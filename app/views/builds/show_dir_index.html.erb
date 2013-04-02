@@ -8,7 +8,7 @@
   </tr>
   <% @build.files_in(params[:path]).each do |f| %>
   <tr>
-    <td><%= link_to f, f %></td>
+    <td><a href="<%= url_for({:path => f, :only_path => false}) %>"><%= f %></a></td>
     <td><%= file_mtime(f) %></td>
     <td><%= file_size(f) rescue 0 %> bytes</td>
     <td><%= file_type(f) %></td>
